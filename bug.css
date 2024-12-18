@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an issue with the `:has()` pseudo-class where the selector might not work as expected with pseudo-elements::
+
+```css
+div:has(> p::before) {
+  background-color: yellow;
+}
+```
+
+This code intends to target `div` elements that have a paragraph (`p`) child with a `::before` pseudo-element. However, the `:has()` pseudo-class in some browsers might not correctly recognize the `::before` or `::after` pseudo-elements as valid children, resulting in the styling not being applied.
+
+This is uncommon because the `:has()` pseudo-class itself is relatively new and its interaction with pseudo-elements isn't as widely tested and understood.
