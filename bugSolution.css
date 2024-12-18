@@ -1,0 +1,10 @@
+The issue with using `:has()` and pseudo-elements can be addressed by using a different selector. For instance, instead of targeting the parent based on the presence of a pseudo-element, we can directly style the pseudo-element itself or use a more general selector that doesn't rely on pseudo-elements.  Here's an example:
+
+```css
+div p::before {
+  content: "Some Text";
+  background-color: yellow;
+}
+```
+
+This approach directly styles the `::before` pseudo-element, ensuring the desired style is applied without relying on the potentially unreliable behavior of `:has()` with pseudo-elements.
